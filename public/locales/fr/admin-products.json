@@ -42,9 +42,6 @@
     }
   },
   "status": {
-    "available": "Disponible",
-    "unavailable": "Indisponible",
-    "outofstock": "Rupture de stock",
     "preview": "Aperçu"
   },
   "general": {

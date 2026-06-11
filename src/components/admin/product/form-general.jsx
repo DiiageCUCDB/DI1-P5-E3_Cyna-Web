@@ -5,11 +5,16 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-const STATUS_VALUES = ["Active", "Inactive", "Archived"]
+const STATUS_VALUES = ["Available", "Unavailable", "OutOfStock", "Preview"]
 const LANGS = ["fr", "en"]
+const PRODUCT_STATUS_KEYS = {
+  Available: "available",
+  Unavailable: "unavailable",
+  OutOfStock: "outOfStock",
+}
 
 export function FormGeneral({ value, onChange }) {
-  const { t } = useTranslation("admin-products")
+  const { t } = useTranslation(["admin-products", "common"])
   const [lang, setLang] = useState("fr")
 
   const setField = (base) => (e) =>
@@ -79,7 +84,11 @@ export function FormGeneral({ value, onChange }) {
             className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             {STATUS_VALUES.map(v => (
-              <option key={v} value={v}>{t(`status.${v.toLowerCase()}`)}</option>
+              <option key={v} value={v}>
+                {PRODUCT_STATUS_KEYS[v]
+                  ? t(`product.${PRODUCT_STATUS_KEYS[v]}`, { ns: "common" })
+                  : t(`status.${v.toLowerCase()}`)}
+              </option>
             ))}
           </select>
         </div>

@@ -11,6 +11,18 @@ import { cn } from "@/lib/utils"
 const TH_CLASS = "px-4 py-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground"
 
 const STATUS_VALUES = ["Available", "Unavailable", "OutOfStock", "Preview"]
+const PRODUCT_STATUS_KEYS = {
+  Available: "available",
+  Unavailable: "unavailable",
+  OutOfStock: "outOfStock",
+}
+
+const getStatusLabel = (t, value) => {
+  const key = PRODUCT_STATUS_KEYS[value]
+  return key
+    ? t(`product.${key}`, { ns: "common" })
+    : t(`status.${value.toLowerCase()}`)
+}
 
 const SORT_ICON = {
   yes: <ChevronDown className="h-3.5 w-3.5 text-primary" />,
@@ -22,7 +34,7 @@ const SORT_ICON = {
 // ---------------------------------------------------------------------------
 
 function StatusFilterDropdown({ value, onChange }) {
-  const { t }             = useTranslation("admin-products")
+  const { t }             = useTranslation(["admin-products", "common"])
   const [open, setOpen]   = useState(false)
   const [pending, setPending] = useState(value)
   const [pos, setPos]     = useState({ top: 0, left: 0 })
@@ -85,7 +97,7 @@ function StatusFilterDropdown({ value, onChange }) {
                 onChange={() => toggle(v)}
                 className="h-3.5 w-3.5 accent-primary"
               />
-              {t(`status.${v.toLowerCase()}`)}
+              {getStatusLabel(t, v)}
             </label>
           ))}
           <div className="mt-1.5 border-t pt-1.5">
@@ -127,7 +139,7 @@ function FeaturedSortButton({ value, onChange }) {
 // ---------------------------------------------------------------------------
 
 function AdminTableHeader({ statusFilter, onStatusFilter, featuredSort, onFeaturedSort }) {
-  const { t } = useTranslation("admin-products")
+  const { t } = useTranslation(["admin-products", "common"])
 
   return (
     <TableHeader className="bg-muted/40">
@@ -166,7 +178,7 @@ function AdminTableHeader({ statusFilter, onStatusFilter, featuredSort, onFeatur
 // ---------------------------------------------------------------------------
 
 function TableRows({ loading, products, onDelete }) {
-  const { t } = useTranslation("admin-products")
+  const { t } = useTranslation(["admin-products", "common"])
 
   if (loading) {
     return Array.from({ length: 5 }).map((_, i) => <ProductAdminCardSkeleton key={i} />)

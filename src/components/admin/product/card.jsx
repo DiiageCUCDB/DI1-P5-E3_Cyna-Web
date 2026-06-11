@@ -7,14 +7,22 @@ import { TableCell, TableRow } from "@/components/ui/table"
 import { Pencil, Trash2 } from "lucide-react"
 
 const STATUS_VARIANT = {
-  Active:   "default",
-  Inactive: "outline",
-  Archived: "destructive",
+  Available: "default",
+  Unavailable: "outline",
+  OutOfStock: "destructive",
+  Preview: "secondary",
+}
+
+const PRODUCT_STATUS_KEYS = {
+  Available: "available",
+  Unavailable: "unavailable",
+  OutOfStock: "outOfStock",
 }
 
 export function ProductAdminCard({ product, onDelete }) {
-  const { t } = useTranslation("admin-products")
+  const { t } = useTranslation(["admin-products", "common"])
   const variant = STATUS_VARIANT[product.status] ?? "outline"
+  const statusKey = PRODUCT_STATUS_KEYS[product.status]
 
   return (
     <TableRow className="hover:bg-muted/20 transition-colors">
@@ -38,7 +46,9 @@ export function ProductAdminCard({ product, onDelete }) {
 
       <TableCell className="px-4 py-5 whitespace-nowrap">
         <Badge variant={variant}>
-          {t(`status.${product.status?.toLowerCase()}`)}
+          {statusKey
+            ? t(`product.${statusKey}`, { ns: "common" })
+            : t(`status.${product.status?.toLowerCase()}`)}
         </Badge>
       </TableCell>
 

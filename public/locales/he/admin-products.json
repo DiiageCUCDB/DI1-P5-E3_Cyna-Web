@@ -10,9 +10,6 @@
     "deleteError": "שגיאה במחיקה"
   },
   "status": {
-    "available": "זמין",
-    "unavailable": "לא זמין",
-    "outofstock": "אזל המלאי",
     "preview": "תצוגה מקדימה"
   },
   "featured": {

@@ -10,9 +10,6 @@
     "deleteError": "خطأ أثناء الحذف"
   },
   "status": {
-    "available": "متاح",
-    "unavailable": "غير متاح",
-    "outofstock": "نفد المخزون",
     "preview": "معاينة"
   },
   "featured": {

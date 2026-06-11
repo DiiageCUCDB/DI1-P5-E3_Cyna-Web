@@ -49,7 +49,10 @@
     "loading": "טוען...",
     "perUser": "/ משתמש",
     "perDevice": "/ מכשיר",
-    "onQuote": "לפי בקשה"
+    "onQuote": "לפי בקשה",
+    "available": "זמין",
+    "unavailable": "לא זמין",
+    "outOfStock": "אזל המלאי"
   },
   "admin": {
     "langFr": "🇫🇷 צרפתית",
