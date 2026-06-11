@@ -11,10 +11,17 @@ const STATUS_VARIANT = {
   Inactive: "outline",
   Archived: "destructive",
 }
+const STATUS_LABEL_KEYS = {
+  available: "available",
+  unavailable: "unavailable",
+  outofstock: "outOfStock",
+  preview: "preview",
+}
 
 export function ProductAdminCard({ product, onDelete }) {
   const { t } = useTranslation("admin-products")
   const variant = STATUS_VARIANT[product.status] ?? "outline"
+  const statusLabelKey = STATUS_LABEL_KEYS[product.status?.toLowerCase()]
 
   return (
     <TableRow className="hover:bg-muted/20 transition-colors">
@@ -38,7 +45,7 @@ export function ProductAdminCard({ product, onDelete }) {
 
       <TableCell className="px-4 py-5 whitespace-nowrap">
         <Badge variant={variant}>
-          {t(`status.${product.status?.toLowerCase()}`)}
+          {statusLabelKey ? t(`common:product.${statusLabelKey}`) : product.status}
         </Badge>
       </TableCell>
 

@@ -49,7 +49,11 @@
     "loading": "Chargement en cours...",
     "perUser": "/ utilisateur",
     "perDevice": "/ appareil",
-    "onQuote": "Sur devis"
+    "onQuote": "Sur devis",
+    "available": "Disponible",
+    "unavailable": "Indisponible",
+    "outOfStock": "Rupture de stock",
+    "preview": "Aperçu"
   },
   "admin": {
     "langFr": "🇫🇷 Français",

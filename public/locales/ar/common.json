@@ -49,7 +49,11 @@
     "loading": "جارٍ التحميل...",
     "perUser": "/ مستخدم",
     "perDevice": "/ جهاز",
-    "onQuote": "بناءً على الطلب"
+    "onQuote": "بناءً على الطلب",
+    "available": "متاح",
+    "unavailable": "غير متاح",
+    "outOfStock": "نفد المخزون",
+    "preview": "معاينة"
   },
   "admin": {
     "langFr": "🇫🇷 الفرنسية",

@@ -11,6 +11,12 @@ import { cn } from "@/lib/utils"
 const TH_CLASS = "px-4 py-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground"
 
 const STATUS_VALUES = ["Available", "Unavailable", "OutOfStock", "Preview"]
+const STATUS_LABEL_KEYS = {
+  Available: "available",
+  Unavailable: "unavailable",
+  OutOfStock: "outOfStock",
+  Preview: "preview",
+}
 
 const SORT_ICON = {
   yes: <ChevronDown className="h-3.5 w-3.5 text-primary" />,
@@ -85,7 +91,7 @@ function StatusFilterDropdown({ value, onChange }) {
                 onChange={() => toggle(v)}
                 className="h-3.5 w-3.5 accent-primary"
               />
-              {t(`status.${v.toLowerCase()}`)}
+              {t(`common:product.${STATUS_LABEL_KEYS[v]}`)}
             </label>
           ))}
           <div className="mt-1.5 border-t pt-1.5">

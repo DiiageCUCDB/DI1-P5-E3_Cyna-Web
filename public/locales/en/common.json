@@ -49,7 +49,11 @@
     "loading": "Loading...",
     "perUser": "/ user",
     "perDevice": "/ device",
-    "onQuote": "On request"
+    "onQuote": "On request",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "outOfStock": "Out of stock",
+    "preview": "Preview"
   },
   "admin": {
     "langFr": "🇫🇷 French",

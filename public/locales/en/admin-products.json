@@ -9,12 +9,6 @@
     "deleteSuccess": "Product deleted",
     "deleteError": "Error while deleting"
   },
-  "status": {
-    "available": "Available",
-    "unavailable": "Unavailable",
-    "outofstock": "Out of stock",
-    "preview": "Preview"
-  },
   "featured": {
     "yes": "⭐ Yes",
     "no": "No"

@@ -24,9 +24,6 @@
     "apply": "Show results"
   },
   "product": {
-    "available": "Available",
-    "unavailable": "Unavailable",
-    "outOfStock": "Out of Stock",
     "from": "From",
     "perMonth": "/month",
     "perYear": "/year",

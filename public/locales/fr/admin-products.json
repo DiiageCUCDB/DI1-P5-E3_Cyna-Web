@@ -41,12 +41,6 @@
       "created": "Produit créé"
     }
   },
-  "status": {
-    "available": "Disponible",
-    "unavailable": "Indisponible",
-    "outofstock": "Rupture de stock",
-    "preview": "Aperçu"
-  },
   "general": {
     "title": "Informations générales",
     "name": "Nom du produit",

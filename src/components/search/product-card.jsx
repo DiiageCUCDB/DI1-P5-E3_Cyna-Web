@@ -48,6 +48,7 @@ function resolveStatusBadge(status) {
  */
 export function ProductCard({ product }) {
   const { t } = useTranslation("search")
+  const { t: tc } = useTranslation("common")
 
   const { variant: badgeVariant, labelKey, isAvailable } = resolveStatusBadge(product.status)
 
@@ -76,7 +77,7 @@ export function ProductCard({ product }) {
           <div className="mt-auto flex items-end justify-between pt-3">
             <div className="flex flex-col gap-1">
               <Badge variant={badgeVariant}>
-                {t(labelKey, { defaultValue: product.status })}
+                {tc(labelKey, { defaultValue: product.status })}
               </Badge>
 
               {/* Prix depuis ProductDto.price — toujours présent */}
