@@ -47,7 +47,7 @@ export function ProductAdminCard({ product, onDelete }) {
       <TableCell className="px-4 py-5 whitespace-nowrap">
         <Badge variant={variant}>
           {statusKey
-            ? t(`product.${statusKey}`, { ns: "common" })
+            ? t(`product.${statusKey}`, { ns: "common", defaultValue: product.status })
             : t(`status.${product.status?.toLowerCase()}`)}
         </Badge>
       </TableCell>

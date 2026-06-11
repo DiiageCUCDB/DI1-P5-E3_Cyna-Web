@@ -86,7 +86,7 @@ export function FormGeneral({ value, onChange }) {
             {STATUS_VALUES.map(v => (
               <option key={v} value={v}>
                 {PRODUCT_STATUS_KEYS[v]
-                  ? t(`product.${PRODUCT_STATUS_KEYS[v]}`, { ns: "common" })
+                  ? t(`product.${PRODUCT_STATUS_KEYS[v]}`, { ns: "common", defaultValue: v })
                   : t(`status.${v.toLowerCase()}`)}
               </option>
             ))}

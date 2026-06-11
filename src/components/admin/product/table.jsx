@@ -20,7 +20,7 @@ const PRODUCT_STATUS_KEYS = {
 const getStatusLabel = (t, value) => {
   const key = PRODUCT_STATUS_KEYS[value]
   return key
-    ? t(`product.${key}`, { ns: "common" })
+    ? t(`product.${key}`, { ns: "common", defaultValue: value })
     : t(`status.${value.toLowerCase()}`)
 }
 
